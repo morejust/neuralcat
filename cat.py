@@ -1,4 +1,5 @@
 import os
+import time
 import random 
 
 from caption import generate_caption
@@ -60,12 +61,16 @@ def upload_photo(photo_path, text):
     return bot.upload_photo(photo_path, text)
 
 
-
-
 if __name__ == '__main__':
-    caption = generate_caption()
-    cat_url = get_cat_url()
+    while True:
+        try:
+            caption = generate_caption()
+            cat_url = get_cat_url()
 
-    styled_local_img_path = neural_style_photo(cat_url)
+            styled_local_img_path = neural_style_photo(cat_url)
 
-    upload_photo(styled_local_img_path, caption)
+            upload_photo(styled_local_img_path, caption)
+            exit()
+        except:
+            time.sleep(10 * 60)
+        
