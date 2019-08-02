@@ -75,6 +75,7 @@ if __name__ == '__main__':
 
             upload_photo(styled_local_img_path, caption)
             exit()
-        except:
-            time.sleep(10 * 60)
+        except Exception as e:
+            print(e)
+            time.sleep(7 * 60)
         
