@@ -58,7 +58,11 @@ def upload_photo(photo_path, text):
         username=os.environ['INSTAGRAM_USERNAME'], 
         password=os.environ['INSTAGRAM_PASSWORD']
     )
-    return bot.upload_photo(photo_path, text)
+    bot.upload_photo(photo_path, text)
+
+    last_media_id = bot.get_your_medias()[0]
+    text = "#cat #cats #meow #bestmeow #vsco #awesome #nice #aaw #ny #nya #lovecat #kitty #kittens #kitten #instakitty #hellokitty #cute #cutecats #cutecat #pretty #kitties #kittycat #lovecats #blackcat #mycat"
+    bot.comment(last_media_id, text)
 
 
 if __name__ == '__main__':
