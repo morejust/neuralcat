@@ -1,0 +1,4 @@
+instabot
+flickr_api
+googletrans
+algorithmia
