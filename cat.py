@@ -18,7 +18,9 @@ def get_cat_url():
         sort='interestingness-desc',
         safe_search=3
     )
-    photo = next(w)
+    photos = [next(w) for _ in range(124)]
+    photo = random.choice(photos)
+    
     link_to_photo = photo.getPhotoFile()
     return link_to_photo
 
