@@ -71,9 +71,12 @@ if __name__ == '__main__':
     while True:
         try:
             caption = generate_caption()
+            print("CAPTION:", caption)
             cat_url = get_cat_url()
+            print("CAT URL:", cat_url)
 
             styled_local_img_path = neural_style_photo(cat_url)
+            print("LOCAL STYLED IMG PATH:", styled_local_img_path)
 
             upload_photo(styled_local_img_path, caption)
             exit()
